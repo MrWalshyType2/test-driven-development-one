@@ -170,7 +170,21 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
-    	return -1;
+		char[] chars = input.toCharArray();
+		int length = 0;
+		int l = 1;
+		
+		for (int i = 0; i < (chars.length - 1); i++) {
+			if (chars[i + 1] == chars[i]) {
+				l += 1;
+				
+				if (l > length) { length = l; }
+			} else {
+				l = 1;
+			}
+		}
+		
+    	return length;
 	}
 
 	/**
