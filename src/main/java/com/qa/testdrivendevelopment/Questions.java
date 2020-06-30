@@ -28,7 +28,16 @@ public class Questions {
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
 	public String multiChar(String input) {
-		return "";
+		StringBuilder sb = new StringBuilder();
+		char tmp;
+		for (int i=0; i<input.length(); i++) {
+			tmp=input.charAt(i);
+			for (int j=0; j < 3; j++) {
+				sb.append(tmp);
+			}
+		}
+		String rv = sb.toString();
+		return rv;
 	}
 
 	/**
@@ -45,7 +54,39 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-		return "";
+		String sandwichlc = sandwich.toLowerCase();
+		String ret = "";
+		
+		// Count occurences of bread
+		int breadCount = sandwichlc.indexOf("bread");
+		if (breadCount != -1) {
+			StringBuilder sb = new StringBuilder();
+			sb.append(sandwichlc);
+			String sub = sb.substring(breadCount+5);
+			
+			// Check for second occurence of bread
+			if (!(sub.contains("bread"))) { 
+				return ""; 
+			} else {
+				// Build string
+				String[] stArray = sandwichlc.split("bread");
+				StringBuilder sb2 = new StringBuilder();
+				String filling = stArray[1];
+				
+				sb2.append(filling);
+				sb2.reverse();
+				ret = sb2.toString();
+				return ret;
+			}
+		} else {
+			return "";
+		}
+		
+//		if (sandwichlc.contains("bread")) {
+//			
+//		} else {
+//			return "";
+//		}
 	}
 
 	/**
