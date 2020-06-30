@@ -1,5 +1,7 @@
 package com.qa.testdrivendevelopment;
 
+import java.util.Arrays;
+
 public class Questions {
 
 	/**
@@ -102,7 +104,16 @@ public class Questions {
 	 * evenlySpaced(4, 60, 9) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
+		int max, mid, min =0;
+		int nums[] = {a, b, c};
+		Arrays.sort(nums);
+		min = nums[0];
+		mid = nums[1];
+		max = nums[2];
+		if (max - mid != mid - min) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -117,6 +128,8 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
+		// input is always odd, n is always odd
+		
     	return "";
 	}
 
