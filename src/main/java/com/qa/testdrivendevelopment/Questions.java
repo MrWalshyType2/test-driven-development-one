@@ -129,8 +129,17 @@ public class Questions {
 	 */
 	public String nMid(String input, int n) {
 		// input is always odd, n is always odd
+		StringBuilder sb = new StringBuilder();
+		sb.append(input);
+		int length = sb.length();
+		int midIndex = (length / 2) + 1;
+		int midFirst = (midIndex - (n / 2)) - 1;
+		int midLast = midIndex + (n / 2);
 		
-    	return "";
+		sb.delete(midFirst, midLast);
+		String ret = sb.toString();
+		
+    	return ret;
 	}
 
 	/**
@@ -146,7 +155,7 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
-    	return false;
+    	return input.toLowerCase().endsWith("java");
 	}
 
 	/**
