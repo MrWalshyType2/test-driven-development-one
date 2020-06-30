@@ -200,7 +200,17 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-    	return -1;
+		sentence=sentence.toLowerCase();
+		String[] words = sentence.split(" ");
+		int count = 0;
+		for (String word: words) {
+//			System.out.println(view);
+			if (word.contentEquals("am")) { count +=1; }
+		}
+		
+//		if (sentence.contains(am))
+		
+    	return count;
 	}
 
 	/**
@@ -215,7 +225,15 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-    	return "";
+		if (number % 5 == 0 && number % 3 == 0) {
+			return "fizzbuzz";
+		} else if (number % 5 == 0) {
+			return "buzz";
+		} else if (number % 3 == 0) {
+			return "fizz";
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -239,7 +257,22 @@ public class Questions {
 	 */
 
 	public int largest(String input) {
-    	return -1;
+		String[] nums = input.split(" ");
+		String tmp;
+		char tmp2;
+		int num = 0;
+		int tmpNum = 0;
+		for (String n: nums) {
+			for (int i= 0; i < n.length(); i++) {
+		
+			tmp2 = n.charAt(i);
+			tmp = Character.toString(tmp2);
+			tmpNum += Integer.parseInt(tmp);
+			}
+			if (tmpNum > num) num=tmpNum;
+			tmpNum = 0;
+		}
+    	return num;
 	}
 
 	/**
@@ -256,6 +289,14 @@ public class Questions {
 	 * HINT: String.charAt
 	 */
 	public boolean compares(String word, int index, char letter) {
+		if (index > word.length()) {
+			return false;
+		}
+		index -= 1;
+		
+		if (letter == word.charAt(index)) {
+			return true;
+		}
     	return false;
 	}
 }
