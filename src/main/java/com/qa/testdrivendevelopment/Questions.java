@@ -84,11 +84,6 @@ public class Questions {
 			return "";
 		}
 		
-//		if (sandwichlc.contains("bread")) {
-//			
-//		} else {
-//			return "";
-//		}
 	}
 
 	/**
