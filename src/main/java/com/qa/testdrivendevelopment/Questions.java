@@ -83,7 +83,11 @@ public class Questions {
 		} else {
 			return "";
 		}
+	}
+	
+	public String sandwichFillingAlt(String sandwich) {
 		
+		return "";
 	}
 
 	/**
