@@ -59,7 +59,7 @@ public class Questions {
 		String sandwichlc = sandwich.toLowerCase();
 		String ret = "";
 		
-		// Count occurences of bread
+		// Check if there is an occurence of bread
 		int breadCount = sandwichlc.indexOf("bread");
 		if (breadCount != -1) {
 			StringBuilder sb = new StringBuilder();
@@ -83,7 +83,10 @@ public class Questions {
 		} else {
 			return "";
 		}
-		
+	}
+	
+	public String sandwichFillingAlt(String sandwich) {
+		return "";
 	}
 
 	/**
